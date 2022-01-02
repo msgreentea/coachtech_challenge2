@@ -10,7 +10,7 @@
   <title>@yield('title')</title>
 </head>
 <body>
-  @yield('title')
+  <h1>@yield('title')</h1>
   @yield('content')
 </body>
 </html>

@@ -1,9 +1,11 @@
 @extends('layout')
 
+
 @section('css')
   <link rel="stylesheet" href="{{ asset('/css/share.css') }}">
   <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
+
 
 @section('title')
     お問い合わせ
@@ -11,7 +13,7 @@
 
 
 @section('content')
-  <form action="" method="post">
+<form action="{{ route('') }}" method="post">
     <table>
       <!-- 名前 -->
       <tr>

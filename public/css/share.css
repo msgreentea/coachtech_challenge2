@@ -24,3 +24,7 @@ button {
   padding: 5px 50px;
   border-radius: 3px;
 }
+th {
+  width: 20%;
+  text-align: left;
+}
