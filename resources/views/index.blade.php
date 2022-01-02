@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('css')
+  <link rel="stylesheet" href="{{ asset('/css/share.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+@endsection
+
 @section('title')
     お問い合わせ
 @endsection
