@@ -13,14 +13,14 @@
 
 
 @section('content')
-<form action="{{ route('') }}" method="post">
+<form action="{{ route('confirm') }}" method="get">
     <table>
       <!-- 名前 -->
       <tr>
         <th>お名前<span>※</span></th>
         <td class="side">
           <div class="left">
-            <input type="text" name="familyname">
+            <input type="text" name="familyname" value="">
           </div>
           <div class="right">
             <input type="text" name="lastname">
@@ -62,7 +62,7 @@
       <tr>
         <th class="th">メールアドレス<span>※</span></th>
         <td class="td">
-          <input type="text">
+          <input type="text" name="email">
         </td>
       </tr>
       <tr>
@@ -79,7 +79,7 @@
             <p class="bold-text">〒</p>
           </div>
           <div class="right">
-            <input type="text">
+            <input type="text" name="email">
           </div>
         </td>
       </tr>
@@ -95,7 +95,7 @@
       <tr>
         <th>住所<span>※</span></th>
         <td>
-          <input type="text">
+          <input type="text" name="address">
         </td>
       </tr>
       <tr>

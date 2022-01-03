@@ -13,35 +13,35 @@
 
 
 @section('content')
-  <form action="{{ route('post') }}">
+  <form action="{{ route('add') }}">
     <table>
       <tr>
         <th>お名前</th>
-        <td>{{ -> }}</td>
+        <td>{{ $fullname }}</td>
       </tr>
       <tr>
         <th>性別</th>
-        <td>{{ -> }}</td>
+        <td>{{ $gender }}</td>
       </tr>
       <tr>
         <th>メールアドレス</th>
-        <td>{{ -> }}</td>
+        <td>{{ $email }}</td>
       </tr>
       <tr>
         <th>郵便番号</th>
-        <td>{{ -> }}</td>
+        <td>{{ $postcode }}</td>
       </tr>
       <tr>
         <th>住所</th>
-        <td>{{ -> }}</td>
+        <td>{{ $address }}</td>
       </tr>
       <tr>
         <th>建物</th>
-        <td>{{ -> }}</td>
+        <td>{{ $building_name }}</td>
       </tr>
       <tr>
         <th>ご意見</th>
-        <td>{{ -> }}</td>
+        <td>{{ $opinion }}</td>
       </tr>
     </table>
     <button>送信する</button>
