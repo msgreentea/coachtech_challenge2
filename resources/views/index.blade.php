@@ -20,10 +20,12 @@
         <th>お名前<span>※</span></th>
         <td class="side">
           <div class="left">
-            <input type="text" name="familyname" value="">
+            {{-- <input type="text" name="familyname" value=""> --}}
+            <input type="text" name="familyname" value="{{ old('familyname') }}">
           </div>
           <div class="right">
-            <input type="text" name="lastname">
+            {{-- <input type="text" name="lastname"> --}}
+            <input type="text" name="lastname" value="{{ old('lastname') }}">
           </div>
         </td>
       </tr>
@@ -62,7 +64,8 @@
       <tr>
         <th class="th">メールアドレス<span>※</span></th>
         <td class="td">
-          <input type="text" name="email">
+          {{-- <input type="text" name="email"> --}}
+          <input type="text" name="email" value="{{ old('email') }}">
         </td>
       </tr>
       <tr>
@@ -79,7 +82,8 @@
             <p class="bold-text">〒</p>
           </div>
           <div class="right">
-            <input type="text" name="email">
+            {{-- <input type="text" name="email"> --}}
+            <input type="text" name="postcode" value="{{ old('postcode') }}">
           </div>
         </td>
       </tr>
@@ -95,7 +99,8 @@
       <tr>
         <th>住所<span>※</span></th>
         <td>
-          <input type="text" name="address">
+          {{-- <input type="text" name="address"> --}}
+          <input type="text" name="address" value="{{ old('address') }}">
         </td>
       </tr>
       <tr>
@@ -106,9 +111,10 @@
       </tr>
       <!-- 建物名 -->
       <tr>
-        <th>建物名<span>※</span></th>
+        <th>建物名</th>
         <td>
-          <input type="text" name="building_name">
+          {{-- <input type="text" name="building_name"> --}}
+          <input type="text" name="building_name" value="{{ old('buidling_name') }}">
         </td>
       </tr>
       <tr>
@@ -119,7 +125,7 @@
       </tr>
       <tr>
         <th>ご意見<span>※</span></th>
-        <td><textarea name="opinion" id="" cols="30" rows="10"></textarea></td>
+        <td><textarea name="opinion" id="" cols="30" rows="10" value="{{ old('opinion') }}"></textarea></td>
       </tr>
     </table>
     <button>送信</button>
