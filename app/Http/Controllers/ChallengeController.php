@@ -47,4 +47,9 @@ class ChallengeController extends Controller
     {
         return view('thanks');
     }
+
+    public function system()
+    {
+        return view('system');
+    }
 }
