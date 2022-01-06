@@ -53,11 +53,7 @@ textarea {
   padding-right: 15px;
 }
 
-.radio {
-  display: flex;
-  align-items: center;
-  /* width: 100px; */
-}
+
 .radio:not(:first-child) {
   padding: 0 30px;
 }
@@ -67,12 +63,4 @@ textarea {
 .radio label {
   padding-left: 20px;
 }
-input[type="radio"] {
-  width: 20px;
-  height: 20px;
-  padding: 10px;
-  margin: 20px 0;
-  justify-content: left;
-  transform: scale(1.5);
-  border: 1px solid #ccc;
-}
+
