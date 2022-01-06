@@ -40,7 +40,6 @@ textarea {
 }
 
 .side {
-  display: flex;
   justify-content: space-between;
 }
 .left,

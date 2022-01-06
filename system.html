@@ -16,12 +16,12 @@
     <form action="">
       <div class="side">
         <!-- お名前 -->
-        <div class="name">
+        <div class="name side">
           <div class="th">お名前</div>
           <input type="text" name="fullname" value="">
         </div>
         <!-- 性別 -->
-        <div class="gender">
+        <div class="gender side">
           <div class="th">性別</div>
           <input type="radio" value="all" checked>全て
           <input type="radio" value="male">男性
@@ -29,12 +29,12 @@
         </div>
       </div>
       <!-- 登録日 -->
-      <div class="date">
+      <div class="date side">
         <div class="th">登録日</div>
-        <input type="text" name="created_at" value="">
+        <input type="text" name="created_at" value=""> ~ <input type="text" name="created_at" value="">
       </div>
       <!-- メールアドレス -->
-      <div class="email">
+      <div class="email side">
         <div class="th">メールアドレス</div>
         <input type="text" name="email" value="">
       </div>
@@ -48,27 +48,27 @@
       <p>全35件中　件</p>
       <!-- {{ $items->links() }} -->
     </div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>お名前</th>
+        <th>性別</th>
+        <th>メールアドレス</th>
+        <th>ご意見</th>
+        <th></th>
+      </tr>
+      @foreach ($items as $item)
+      <tr>
+        <td>{{ $itemid }}</td>
+        <td>{{ $itemfullname }}</td>
+        <td>{{ $itemgender }}</td>
+        <td>{{ $itememail }}</td>
+        <td>{{ $itemopinion }}</td>
+        <td><button>削除</button></td>
+      </tr>
+      @endforeach
+    </table>
   </div>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>お名前</th>
-      <th>性別</th>
-      <th>メールアドレス</th>
-      <th>ご意見</th>
-      <th></th>
-    </tr>
-    @foreach ($items as $item)
-    <tr>
-      <td>{{ $item->id }}</td>
-      <td>{{ $item->fullname }}</td>
-      <td>{{ $item->gender }}</td>
-      <td>{{ $item->email }}</td>
-      <td>{{ $item->opinion }}</td>
-      <td><button>削除</button></td>
-    </tr>
-    @endforeach
-  </table>
 </body>
 
 </html>

@@ -24,10 +24,35 @@ button {
   padding: 5px 50px;
   border-radius: 3px;
 }
+a {
+  color: black;
+  display: block;
+  text-align: center;
+}
+
+
 th {
   width: 20%;
   text-align: left;
 }
+.radio {
+  display: flex;
+  align-items: center;
+  /* width: 100px; */
+}
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 20px 0;
+  justify-content: left;
+  transform: scale(1.5);
+  border: 1px solid #ccc;
+}
 .center {
   text-align: center;
+}
+.side {
+  display: flex;
+  align-items: center;
 }
