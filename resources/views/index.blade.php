@@ -29,9 +29,9 @@
           </div>
         </td>
       </tr>
-      <tr class="invisible">
-        <th class="invisible"></th>
-        <td class="invisible">
+      <tr>
+        <th></th>
+        <td>
           <div class="side">
             <div class="left">
               <p class="example">例）山田</p>
@@ -47,17 +47,14 @@
         <th class="th">性別<span>※</span></th>
         <td class="td radio-side">
           <div class="radio">
-            <input type="radio" name="gender" id="male" value="male" checked="checked">
-            <label for="male">男性</label>
-            <!-- <p>男性</p> -->
+            <label for=""><input type="radio" name="gender" value="male" checked="checked">男性</label>
+            <label for=""><input type="radio" name="gender" value="female" checked="checked">女性</label>
+            <label for="male"></label>
           </div>
-          <div class="radio">
-            <input type="radio" name="gender" id="female" value="female">
+          {{-- <div class="radio">
+            <input type="radio" name="gender" value="female">
             <label for="female">女性</label>
-            <!-- <p>女性</p> -->
-          </div>
-          <!-- <input type="radio" name="gender" value="male" checked="checked">男性
-          <input type="radio" name="gender" value="female">女性 -->
+          </div> --}}
         </td>
       </tr>
       <!-- メールアドレス -->

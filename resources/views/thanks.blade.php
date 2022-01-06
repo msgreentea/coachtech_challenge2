@@ -9,7 +9,6 @@
 @section('content')
 <div class="container">
   <p class="center">ご意見いただきありがとうございました。</p>
-  {{-- トップページへの遷移は不要 --}}
   <button action="">トップページへ</button>
 </div>
 @endsection

@@ -15,10 +15,14 @@ class Contact extends Model
 
     public static $validation = array(
         'fullname' => 'required',
-        'gender' => 'required',
+        'gender' => 'required | in: 男性, 女性',
         'email' => 'required | email:rfc, dns',
         'postcode' => 'required | max:8 | min:8',
         'address' => 'required',
         'opinion' => 'required | max:120'
     );
+
+    static $gender = [
+        '男性', '女性'
+    ];
 }

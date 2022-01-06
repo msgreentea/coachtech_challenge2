@@ -14,7 +14,7 @@ class ChallengeController extends Controller
 
     public function confirm(Request $request)
     {
-        $this->validate($request, Contact::$rules);
+        // $this->validate($request, Contact::$rules);
 
         $fullname = $request->familyname . " " . $request->lastname;
         $gender = $request->gender;
@@ -89,5 +89,7 @@ class ChallengeController extends Controller
 
     public function delete(Request $request)
     {
+        Contact::find($request->id)->delete();
+        return redirect('/');
     }
 }
