@@ -24,9 +24,9 @@
         <!-- 性別 -->
         <div class="gender side">
           <div class="th">性別</div>
-          <input type="radio" value="all" checked>全て
-          <input type="radio" value="male">男性
-          <input type="radio" value="female">女性
+          <label><input type="radio" name="gender" value="all" checked>全て</label>
+          <label><input type="radio" name="gender" value="male">男性</label>
+          <label><input type="radio" name="gender" value="female">女性</label>
         </div>
       </div>
       <!-- 登録日 -->

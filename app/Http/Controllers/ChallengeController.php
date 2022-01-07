@@ -60,6 +60,18 @@ class ChallengeController extends Controller
 
     public function find(Request $request)
     {
+        #キーワード受け取り
+        $keyword = $request->input('keyword');
+
+        #クエリ生成
+        $query = User::query();
+
+        #もしキーワードがあったら
+        if (!empty($keyword)) {
+            $query->where('name', 'like', '%' . $keyword . '%')->orWhere('mail', 'like', '%' . $keyword . '%');
+        }
+
+
         // dd($request);
         $form = Contact::where([
             'fullname', 'LIKE', "%{$request->fullname}%",
