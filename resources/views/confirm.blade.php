@@ -23,9 +23,15 @@
       </tr>
       <tr>
         <th>性別</th>
-        <td>{{ $gender }}</td>
-        <td>@if ($gender === 1) echo "男性" @endif</td>
-        <td>@if ($gender === 2) echo "女性" @endif</td>
+        {{-- <td>{{ $gender }}</td> --}}
+        @if ($gender === 1)
+            <td>男性</td>
+        @endif
+        @if ($gender === 2 )
+            <td>女性</td>
+        @endif
+        {{-- <td>@if ($gender === 1) 男性 @endif</td>
+        <td>@if ($gender === 2) 女性 @endif</td> --}}
         <input type="hidden" name="gender" value="{{$gender}}">
       </tr>
       <tr>

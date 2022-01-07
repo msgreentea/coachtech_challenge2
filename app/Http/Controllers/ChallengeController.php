@@ -19,12 +19,6 @@ class ChallengeController extends Controller
 
         $fullname = $request->familyname . " " . $request->lastname;
         $gender = $request->gender;
-
-        if ($request->gender === 1) {
-            $gender = '男性';
-        } else {
-            $gender = '女性';
-        }
         $email = $request->email;
         $postcode = $request->postcode;
         $address = $request->address;
