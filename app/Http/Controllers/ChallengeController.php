@@ -18,7 +18,12 @@ class ChallengeController extends Controller
         // $this->validate($request, Contact::$rules);
 
         $fullname = $request->familyname . " " . $request->lastname;
-        $gender = $request->gender;
+        // $gender = $request->gender;
+        if ($request->gender == 1) {
+            $gender = '男性';
+        } else {
+            $gender = '女性';
+        }
         $email = $request->email;
         $postcode = $request->postcode;
         $address = $request->address;
@@ -35,7 +40,6 @@ class ChallengeController extends Controller
             'opinion' => $opinion
         ];
 
-        // dd($items);
         return view('confirm', $items);
     }
 
@@ -47,6 +51,7 @@ class ChallengeController extends Controller
     }
 
 
+
     // システム管理
     public function system()
     {
@@ -55,15 +60,20 @@ class ChallengeController extends Controller
 
     public function find(Request $request)
     {
+        // dd($request);
         $form = Contact::where([
             'fullname', 'LIKE', "%{$request->fullname}%",
             'gender', 'LIKE', "%{$request->gender}%",
             'created_at', 'LIKE', "%{$request->created_at}%",
             'email', 'LIKE', "%{$request->email}%",
-        ]);
+        ])->get();
 
         $items = [
             'form' => $form,
+            'fullname' => $request->fullname,
+            'gender' => $request->gender,
+            'created_at' => $request->created_at,
+            'email' => $request->email
         ];
 
         return view('system', $items);

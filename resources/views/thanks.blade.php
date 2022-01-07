@@ -8,6 +8,6 @@
 @section('content')
 <div class="container">
   <p class="center">ご意見いただきありがとうございました。</p>
-  <button action="">トップページへ</button>
+  <button>トップページへ</button>
 </div>
 @endsection

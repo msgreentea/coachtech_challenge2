@@ -13,15 +13,21 @@ input {
 }
 table {
   width: 100%;
-  margin: 0;
+  /* margin: 0; */
 }
-.th {
+/* .th {
   font-weight: bold;
   width: 10%;
-  /* line-height: 2; */
-}
+} */
+
+/* .td {
+  width: 90%;
+} */
+
+
 th {
   border-bottom: 1px solid black;
+  margin: 0;
 }
 input[type="radio"] {
   /* width: 20px;

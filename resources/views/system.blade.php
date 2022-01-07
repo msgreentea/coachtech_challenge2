@@ -6,15 +6,20 @@
 @endsection
 
 
+@section('title')
+    管理システム
+@endsection
+
+
 @section('content')
-  <h1>管理システム</h1>
   <div class="container">
-    <form action="">
+    <form action="{{ route('find') }}" method="POST">
+      @csrf
       <div class="side">
         <!-- お名前 -->
         <div class="name side">
           <div class="th">お名前</div>
-          <input type="text" name="fullname" value="">
+          <div class="td"><input type="text" name="fullname" value="{{ request('fullname') }}"></div>
         </div>
         <!-- 性別 -->
         <div class="gender side">
@@ -27,21 +32,23 @@
       <!-- 登録日 -->
       <div class="date side">
         <div class="th">登録日</div>
-        <input type="text" name="created_at" value="">
+        <input type="text" name="created_at" value="{{ request('created_at') }}"> ~ <input type="text" name="created_at" value="{{ request('created_at') }}">
       </div>
       <!-- メールアドレス -->
       <div class="email side">
         <div class="th">メールアドレス</div>
-        <input type="text" name="email" value="">
+        <input type="text" name="email" value="{{ request('email') }}">
       </div>
       <button>検索</button>
     </form>
-    <a href="">リセット</a>
+    <a href="{{ route('system') }}">リセット</a>
   </div>
+
   <!-- result -->
   <div class="container">
     <div class="side">
       <p>全35件中　件</p>
+      {{-- ページング機能させたい --}}
       {{-- {{ $item->links() }} --}}
       {{-- {{ $institutions->appends(request()->input())->links() }}
     </div> --}}
@@ -58,7 +65,7 @@
     @if (isset($items))
     @foreach ($items as $item)
     <tr>
-      <form action="{{ route('delete', $task) }}" method="POST">
+      <form action="{{ route('delete', ['id' => $task->id]) }}" method="POST">
       @csrf
         <td>{{ $item->id }}</td>
         <td>{{ $item->fullname }}</td>

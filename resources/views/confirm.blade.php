@@ -23,15 +23,13 @@
       </tr>
       <tr>
         <th>性別</th>
-        {{-- <td>{{ $gender }}</td> --}}
-        @if ($gender === 1)
+        <td>{{ $gender }}</td>
+        {{-- @if ($gender == 1)
             <td>男性</td>
         @endif
-        @if ($gender === 2 )
+        @if ($gender == 2 )
             <td>女性</td>
-        @endif
-        {{-- <td>@if ($gender === 1) 男性 @endif</td>
-        <td>@if ($gender === 2) 女性 @endif</td> --}}
+        @endif --}}
         <input type="hidden" name="gender" value="{{$gender}}">
       </tr>
       <tr>
