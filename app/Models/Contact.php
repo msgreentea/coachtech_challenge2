@@ -13,16 +13,16 @@ class Contact extends Model
         'id'
     ];
 
-    public static $validation = array(
+    public static $rules = array(
         'fullname' => 'required',
-        'gender' => 'required | in: 男性, 女性',
+        'gender' => 'required',
         'email' => 'required | email:rfc, dns',
-        'postcode' => 'required | max:8 | min:8',
+        'postcode' => 'required | min:8',
         'address' => 'required',
         'opinion' => 'required | max:120'
     );
 
-    static $gender = [
-        '男性', '女性'
-    ];
+    // static $gender = [
+    //     '男性', '女性'
+    // ];
 }

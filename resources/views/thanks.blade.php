@@ -2,7 +2,6 @@
 
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('/css/share.css') }}">
   <link rel="stylesheet" href="{{ asset('/css/thanks.css') }}">
 @endsection
 

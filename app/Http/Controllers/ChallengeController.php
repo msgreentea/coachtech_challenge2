@@ -7,6 +7,7 @@ use App\Models\Contact;
 
 class ChallengeController extends Controller
 {
+    // 入力->確認->登録
     public function index(Request $request)
     {
         return view('index');
@@ -18,6 +19,12 @@ class ChallengeController extends Controller
 
         $fullname = $request->familyname . " " . $request->lastname;
         $gender = $request->gender;
+
+        if ($request->gender === 1) {
+            $gender = '男性';
+        } else {
+            $gender = '女性';
+        }
         $email = $request->email;
         $postcode = $request->postcode;
         $address = $request->address;
@@ -34,6 +41,7 @@ class ChallengeController extends Controller
             'opinion' => $opinion
         ];
 
+        // dd($items);
         return view('confirm', $items);
     }
 
@@ -41,12 +49,11 @@ class ChallengeController extends Controller
     {
         $data = $request->all();
         Contact::create($data);
-    }
-    public function thanks()
-    {
         return view('thanks');
     }
 
+
+    // システム管理
     public function system()
     {
         return view('system');
@@ -54,24 +61,6 @@ class ChallengeController extends Controller
 
     public function find(Request $request)
     {
-        // $fullname = $request->familyname . " " . $request->lastname;
-        // $gender = $request->gender;
-        // $email = $request->email;
-        // $postcode = $request->postcode;
-        // $address = $request->address;
-        // $building_name = $request->building_name;
-        // $opinion = $request->opinion;
-
-        // $items = [
-        //     'fullname' => $fullname,
-        //     'gender' => $gender,
-        //     'email' => $email,
-        //     'postcode' => $postcode,
-        //     'address' => $address,
-        //     'building_name' => $building_name,
-        //     'opinion' => $opinion
-        // ];
-
         $form = Contact::where([
             'fullname', 'LIKE', "%{$request->fullname}%",
             'gender', 'LIKE', "%{$request->gender}%",
@@ -81,7 +70,6 @@ class ChallengeController extends Controller
 
         $items = [
             'form' => $form,
-
         ];
 
         return view('system', $items);

@@ -2,7 +2,6 @@
 
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('/css/share.css') }}">
   <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 @endsection
 
@@ -47,14 +46,9 @@
         <th class="th">性別<span>※</span></th>
         <td class="td radio-side">
           <div class="radio">
-            <label for=""><input type="radio" name="gender" value="male" checked="checked">男性</label>
-            <label for=""><input type="radio" name="gender" value="female" checked="checked">女性</label>
-            <label for="male"></label>
+            <label><input type="radio" name="gender" value="1" checked="checked">男性</label>
+            <label><input type="radio" name="gender" value="2">女性</label>
           </div>
-          {{-- <div class="radio">
-            <input type="radio" name="gender" value="female">
-            <label for="female">女性</label>
-          </div> --}}
         </td>
       </tr>
       <!-- メールアドレス -->
