@@ -18,12 +18,12 @@ class ChallengeController extends Controller
         // $this->validate($request, Contact::$rules);
 
         $fullname = $request->familyname . " " . $request->lastname;
-        // $gender = $request->gender;
-        if ($request->gender == 1) {
-            $gender = '男性';
-        } else {
-            $gender = '女性';
-        }
+        $gender = $request->gender;
+        // if ($request->gender == 1) {
+        //     $gender = '男性';
+        // } else {
+        //     $gender = '女性';
+        // }
         $email = $request->email;
         $postcode = $request->postcode;
         $address = $request->address;
@@ -60,16 +60,16 @@ class ChallengeController extends Controller
 
     public function find(Request $request)
     {
-        #キーワード受け取り
-        $keyword = $request->input('keyword');
+        // #キーワード受け取り
+        // $keyword = $request->input('keyword');
 
-        #クエリ生成
-        $query = User::query();
+        // #クエリ生成
+        // $query = User::query();
 
-        #もしキーワードがあったら
-        if (!empty($keyword)) {
-            $query->where('name', 'like', '%' . $keyword . '%')->orWhere('mail', 'like', '%' . $keyword . '%');
-        }
+        // #もしキーワードがあったら
+        // if (!empty($keyword)) {
+        //     $query->where('name', 'like', '%' . $keyword . '%')->orWhere('mail', 'like', '%' . $keyword . '%');
+        // }
 
 
         // dd($request);
