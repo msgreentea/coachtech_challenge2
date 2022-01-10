@@ -19,11 +19,9 @@
         <th>お名前<span>※</span></th>
         <td class="side">
           <div class="left">
-            {{-- <input type="text" name="familyname" value=""> --}}
             <input type="text" name="familyname" value="{{ old('familyname') }}">
           </div>
           <div class="right">
-            {{-- <input type="text" name="lastname"> --}}
             <input type="text" name="lastname" value="{{ old('lastname') }}">
           </div>
         </td>
@@ -31,6 +29,9 @@
       <tr>
         <th></th>
         <td>
+          @if ($errors->has('fullname'))
+            <span>{{ $errors->first('fullname') }}</span>
+          @endif
           <div class="side">
             <div class="left">
               <p class="example">例）山田</p>
@@ -55,8 +56,10 @@
       <tr>
         <th class="th">メールアドレス<span>※</span></th>
         <td class="td">
-          {{-- <input type="text" name="email"> --}}
           <input type="text" name="email" value="{{ old('email') }}">
+          @if ($errors->has('email'))
+              <span>{{ $errors->first('email') }}</span>
+          @endif
         </td>
       </tr>
       <tr>
@@ -73,7 +76,6 @@
             <p class="bold-text">〒</p>
           </div>
           <div class="right">
-            {{-- <input type="text" name="email"> --}}
             <input type="text" name="postcode" value="{{ old('postcode') }}">
           </div>
         </td>
@@ -82,6 +84,9 @@
         <th></th>
         <td class="side">
           <div class="right">
+            @if ($errors->has('postcode'))
+              <span>{{ $errors->first('postcode') }}</span>
+            @endif
             <p class="example">例）123-4567</p>
           </div>
         </td>
@@ -90,8 +95,10 @@
       <tr>
         <th>住所<span>※</span></th>
         <td>
-          {{-- <input type="text" name="address"> --}}
           <input type="text" name="address" value="{{ old('address') }}">
+          @if ($errors->has('address'))
+            <span>{{ $errors->first('address') }}</span>
+          @endif
         </td>
       </tr>
       <tr>
@@ -104,7 +111,6 @@
       <tr>
         <th>建物名</th>
         <td>
-          {{-- <input type="text" name="building_name"> --}}
           <input type="text" name="building_name" value="{{ old('buidling_name') }}">
         </td>
       </tr>
@@ -116,7 +122,12 @@
       </tr>
       <tr>
         <th>ご意見<span>※</span></th>
-        <td><textarea name="opinion" id="" cols="30" rows="10" value="{{ old('opinion') }}"></textarea></td>
+        <td>
+          <textarea name="opinion" id="" cols="30" rows="10" value="{{ old('opinion') }}"></textarea>
+          @if ($errors->has('opinion'))
+              <span>{{ $errors->first('opinion') }}</span>
+          @endif
+        </td>
       </tr>
     </table>
     <button>送信</button>

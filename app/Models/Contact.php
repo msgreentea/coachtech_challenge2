@@ -14,9 +14,12 @@ class Contact extends Model
     ];
 
     public static $rules = array(
-        'fullname' => 'required',
+        // 'fullname' => 'required',
+        'familyname' => 'required',
+        'lastname' => 'required',
         'gender' => 'required',
-        'email' => 'required | email:rfc, dns',
+        // 'email' => 'required | email:rfc, dns',
+        'email' => 'required | email',
         'postcode' => 'required | min:8',
         'address' => 'required',
         'opinion' => 'required | max:120'
